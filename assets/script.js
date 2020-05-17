@@ -32,3 +32,20 @@ function searchCities(cityName) {
 }
 
 console.log(searchCities("New York City"));
+
+var queryURL =
+"https://api.openweathermap.org/data/2.5/forecast?" +
+  "q=" + cityData + "&units=imperial&appid=8c42537d5174398ca75f180d9d409dc2",
+
+  var date = new Date(response.list[i].dt * 1000).toDateString()
+  
+  response.list[i].main.humidity
+  
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+
+
+
+
