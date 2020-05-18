@@ -26,6 +26,8 @@ function searchCities(cityName) {
 
         $('#weatherImage').attr('src', imageURL);
 
+        ("#enteredCity").html(response.name + " (" + todayDate + ")");
+
         $("#temperature").text("Temperature: " + response.main.temp);
         //console.log(response.main.temp);
         $("#humidity").text("Humidity: " + response.main.humidity);
@@ -117,6 +119,48 @@ function searchCities(cityName) {
 
 console.log(searchCities("New York City"));
 
+if (localStorage.getItem("searchArray") === null) {
+    localStorage.setItem("searchArray", searchArray);
+
+} else {
+    enteredList = localStorage.getItem("searchArray");
+
+    appendArchive();
+}
+
+function clearList() {
+    $("#enteredCity").empty();
+
+    $("#temperature").empty();
+
+    $("#humidity").empty();
+
+    $("#windSpeed").empty();
+
+    $("#uv").empty();
+}
+
+$("#cityInput").keyup(function (event) {
+    if (event.keyCode == 13) {
+        $("#button-addon2").click();
+    }
+});
+
+$(".searchBtn").on("click", function () {
+    clearList();
+
+    var cityList = $("#cityInput").val();
+
+    searchArray.push(cityList);
+
+    localStorage.setItem("searchArray", searchArray);
+
+    enteredList = localStorage.getItem("searchArray");
+
+    appendArchive();
+
+    searchCities();
+})
 
 $(document).on("click", ".archBtn", function () {
     clearData();
@@ -133,6 +177,9 @@ $(document).on("click", ".archBtn", function () {
         $('#weatherImage').attr('src', imageURL);
 
         $("#enteredCity").html(response.name + " (" + currentDate + ")");
+
+
+        
 
     })
 })
