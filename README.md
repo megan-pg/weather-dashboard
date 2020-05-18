@@ -17,5 +17,4 @@ Overall I beleive I need to play with where the different functions are layed ou
  relation to one another (should my 5 day forecast be in the same function as the 
 searched city field?).
 
-
-<iframe src="https://drive.google.com/file/d/1684VqUZHIcxGwf1xNuEJCOP1W03iopFJ/preview" width="640" height="480"></iframe>
+![Project-1](./assets/Weather-Dashboard.gif)
